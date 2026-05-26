@@ -1,3 +1,4 @@
+import random
 """
 Problem: Stupid Password Generator
 Write a program that enters two integers n and l and generates, in alphabetical order, all possible "stupid” passwords" that consist of the following 5 characters:
@@ -15,5 +16,13 @@ Return a list of all "stupid" passwords in alphabetical order.
 """
 
 def stupidPassword(n: int, l: int):
-    pass
-
+    pwList = []
+    letters = "abcdefghi"
+    letters2 = "abcdefghi"
+    for n1 in range(1,n+1):
+        for n2 in range(1, n+1):
+            for n3 in range(max(n1,n2) + 1, n + 1):
+                for l1 in range(l):
+                    for l2 in range(l):
+                        pwList.append(str(n1)+str(n2)+letters[l1]+letters2[l2]+str(n3))
+    return pwList
